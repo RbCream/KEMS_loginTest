@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 뷰포트 높이의 100% */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* 배경색을 추가 */
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            width: 20%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px; /* 최대 너비 설정 */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            width: 100%;
+            font-weight: bold;
+            max-width: 320px;
+            color: white;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .btn-google {
+            padding: 10px;
+            border: darkgray solid 1px;
+            border-radius: 4px;
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 320px;
+            color: black;
+            cursor: pointer;
+        }
+        .btn-none {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 100px;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>로그인 페이지</h1><br/>
+    <hr/>
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" /><br/>
+        <input type="password" name="password" placeholder="Password" /><br/>
+        <button class="btn">로그인</button>
+    </form>
+    <hr/>
+    <button class="btn-google" onclick="googleLoginProc()">구글 로그인</button>
+    <hr/>
+    <button class="btn-none" onclick="moveJoinForm()">회원가입</button>
+</div>
+
+<script>
+    function moveJoinForm() {
+        window.location.href = "/joinForm";
+    }
+
+    function googleLoginProc() {
+        window.location.href = "/oauth2/authorization/google"
+    }
+</script>
+
+</body>
+</html>

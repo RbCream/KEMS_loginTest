@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Page</title>
+</head>
+<body>
+<!-- Header or Navigation Bar -->
+<header>
+    <h1>My Page</h1>
+    <p>Welcome, {{principal.username}}!</p>
+</header>
+
+<!-- Main Content -->
+<div>
+    <h2>프로필 정보</h2>
+    <p><strong>사용자명:</strong> {{principal.username}}</p>
+    <p><strong>이메일:</strong> {{principal.user.email}}</p>
+    <br/>
+
+    <!-- Google 연동 버튼 -->
+    <div class="left-area">
+        <form action="/oauth2/authorization/google" method="get">
+            <button type="submit">Google 연동</button>
+        </form>
+    </div><br/>
+    <!-- Logout 버튼 -->
+    <div class="right-area">
+        <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
