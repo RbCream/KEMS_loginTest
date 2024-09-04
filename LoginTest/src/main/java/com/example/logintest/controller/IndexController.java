@@ -130,7 +130,7 @@ public class IndexController {
                 userRepository.save(currentUser);
             }
         }
-        return "redirect:/mypage"; // 연동 후 마이페이지로 리다이렉션
+        return "redirect:/user/mypage"; // 연동 후 마이페이지로 리다이렉션
     }
 
 }

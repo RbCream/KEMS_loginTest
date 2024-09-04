@@ -77,7 +77,7 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/loginForm")  // 커스텀 로그인 페이지
                         .loginProcessingUrl("/login") // /login 주소가 호출이 되면 시큐리티가 낚아채서 대신 로그인을 진행
-                        .defaultSuccessUrl("/user")  // 로그인 성공 시 리다이렉트할 기본 URL
+                        .defaultSuccessUrl("/user/myPage")  // 로그인 성공 시 리다이렉트할 기본 URL
                         .permitAll()  // 로그인 페이지는 모든 사용자에게 접근 허용
                 )
                 //OAuth2 인증 후처리 과정 => 1.코드받기(인증), 2.액세스토큰(권한), 3.사용자프로필정보 가져오기, 4.그 정보를 토대로 회원가입 진행
@@ -86,7 +86,7 @@ public class SecurityConfig {
                         .userInfoEndpoint(userInfo ->
                                 userInfo.userService(principalOauth2UserService) // OAuth2 사용자 서비스 설정 (필요시 구현체 설정)
                         )
-                        .defaultSuccessUrl("/user")
+                        .defaultSuccessUrl("/user/myPage")
                 );
 
         return http.build();

@@ -10,8 +10,8 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/kems?serverTimezone=Asia/Seoul
-    username: kems001
+    url: jdbc:mysql://localhost:3306/kemstest?serverTimezone=Asia/Seoul
+    username: kemstest
     password: 1234
 
 #  ?? ??? ?? ???
